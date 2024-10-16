@@ -1,0 +1,8 @@
+{
+    "uuid": "quadwrangler@xrossb.github.com",
+    "name": "Quadwrangler",
+    "description": "Quickly snap windows to predefined regions",
+    "url": "https://github.com/xrossb/quadwrangler",
+    "settings-schema": "org.gnome.shell.extensions.quadwrangler",
+    "shell-version": ["46"]
+}

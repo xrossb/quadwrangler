@@ -1,0 +1,35 @@
+{
+    "name": "quadwrangler",
+    "version": "0.1.0",
+    "description": "Quickly snap windows to predefined regions",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "lint": "eslint . && prettier --check .",
+        "lint:fix": "eslint --fix . && prettier --write .",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "glib-compile-schemas schemas",
+        "prepack": "npm run build && rm -f quadwrangler@xrossb.github.com.shell-extension.zip",
+        "pack": "zip quadwrangler@xrossb.github.com.shell-extension.zip -9r metadata.json extension.js prefs.js schemas lib",
+        "predeploy": "npm run pack",
+        "deploy": "gnome-extensions install -f quadwrangler@xrossb.github.com.shell-extension.zip",
+        "predev": "npm run deploy",
+        "dev": "G_MESSAGES_DEBUG='GNOME Shell' SHELL_DEBUG=all dbus-run-session -- gnome-shell --nested --wayland"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xrossb/quadwrangler.git"
+    },
+    "author": "Edward Allen <hi@eallen.me>",
+    "license": "LGPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/xrossb/quadwrangler/issues"
+    },
+    "homepage": "https://github.com/xrossb/quadwrangler#readme",
+    "devDependencies": {
+        "eslint": "^9.12.0",
+        "eslint-plugin-jsdoc": "^50.4.1",
+        "eslint-plugin-prettier": "^5.2.1",
+        "prettier": "^3.3.3"
+    }
+}

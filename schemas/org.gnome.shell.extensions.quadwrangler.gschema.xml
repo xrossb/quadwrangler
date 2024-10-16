@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schemalist>
+    <schema id="org.gnome.shell.extensions.quadwrangler" path="/org/gnome/shell/extensions/quadwrangler/">
+        <key name="tray-icon" type="b">
+            <default>false</default>
+            <summary>Tray icon</summary>
+            <description>Show a status icon in the system tray</description>
+        </key>
+        <key name="padding" type="i">
+            <default>8</default>
+            <summary>Padding</summary>
+            <description>Padding between snapped windows</description>
+        </key>
+
+        <!-- Halves -->
+        <key name="qw-left-half" type="as">
+            <default><![CDATA[['<Ctrl><Super>Left']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-right-half" type="as">
+            <default><![CDATA[['<Ctrl><Super>Right']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-top-half" type="as">
+            <default><![CDATA[['<Ctrl><Super>Up']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-bottom-half" type="as">
+            <default><![CDATA[['<Ctrl><Super>Down']]]></default>
+            <summary></summary>
+        </key>
+
+        <!-- Quarters -->
+        <key name="qw-top-left" type="as">
+            <default><![CDATA[['<Ctrl><Super>U']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-top-right" type="as">
+            <default><![CDATA[['<Ctrl><Super>I']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-bottom-left" type="as">
+            <default><![CDATA[['<Ctrl><Super>J']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-bottom-right" type="as">
+            <default><![CDATA[['<Ctrl><Super>K']]]></default>
+            <summary></summary>
+        </key>
+
+        <!-- Thirds -->
+        <key name="qw-first-third" type="as">
+            <default><![CDATA[['<Ctrl><Super>D']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-center-third" type="as">
+            <default><![CDATA[['<Ctrl><Super>F']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-last-third" type="as">
+            <default><![CDATA[['<Ctrl><Super>G']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-first-two-thirds" type="as">
+            <default><![CDATA[['<Ctrl><Super>E']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-last-two-thirds" type="as">
+            <default><![CDATA[['<Ctrl><Super>T']]]></default>
+            <summary></summary>
+        </key>
+
+        <!-- Other -->
+        <key name="qw-maximize" type="as">
+            <default><![CDATA[['<Ctrl><Super>Return']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-center" type="as">
+            <default><![CDATA[['<Ctrl><Super>C']]]></default>
+            <summary></summary>
+        </key>
+        <key name="qw-restore" type="as">
+            <default><![CDATA[['<Ctrl><Super>Backspace']]]></default>
+            <summary></summary>
+        </key>
+    </schema>
+</schemalist>
