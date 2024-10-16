@@ -7,6 +7,9 @@ import {
     gettext as _,
 } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
+import {Shortcuts} from './lib/shortcuts.js';
+import ShortcutRow from './lib/shortcut_row.js';
+
 export default class QuadwranglerPreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
         window._settings = this.getSettings();
@@ -68,6 +71,30 @@ export default class QuadwranglerPreferences extends ExtensionPreferences {
         const halves = new Adw.PreferencesGroup({
             title: 'Halves',
         });
+        halves.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.LeftHalf,
+                settings: window._settings,
+            })
+        );
+        halves.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.RightHalf,
+                settings: window._settings,
+            })
+        );
+        halves.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.TopHalf,
+                settings: window._settings,
+            })
+        );
+        halves.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.BottomHalf,
+                settings: window._settings,
+            })
+        );
         page.add(halves);
     }
 }

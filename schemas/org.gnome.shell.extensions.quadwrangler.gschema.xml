@@ -15,19 +15,23 @@
         <!-- Halves -->
         <key name="qw-left-half" type="as">
             <default><![CDATA[['<Ctrl><Super>Left']]]></default>
-            <summary></summary>
+            <summary>Left half</summary>
+            <description>Snap to the left half of the screen.</description>
         </key>
         <key name="qw-right-half" type="as">
             <default><![CDATA[['<Ctrl><Super>Right']]]></default>
-            <summary></summary>
+            <summary>Right half</summary>
+            <description>Snap to the right half of the screen.</description>
         </key>
         <key name="qw-top-half" type="as">
             <default><![CDATA[['<Ctrl><Super>Up']]]></default>
-            <summary></summary>
+            <summary>Top half</summary>
+            <description>Snap to the top half of the screen.</description>
         </key>
         <key name="qw-bottom-half" type="as">
             <default><![CDATA[['<Ctrl><Super>Down']]]></default>
-            <summary></summary>
+            <summary>Bottom half</summary>
+            <description>Snap to the bottom half of the screen.</description>
         </key>
 
         <!-- Quarters -->
