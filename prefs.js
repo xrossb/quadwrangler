@@ -69,7 +69,7 @@ export default class QuadwranglerPreferences extends ExtensionPreferences {
         window.add(page);
 
         const halves = new Adw.PreferencesGroup({
-            title: 'Halves',
+            title: _('Halves'),
         });
         halves.add(
             new ShortcutRow({
@@ -96,5 +96,92 @@ export default class QuadwranglerPreferences extends ExtensionPreferences {
             })
         );
         page.add(halves);
+
+        const quarters = new Adw.PreferencesGroup({
+            title: _('Quarters'),
+        });
+        quarters.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.TopLeft,
+                settings: window._settings,
+            })
+        );
+        quarters.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.TopRight,
+                settings: window._settings,
+            })
+        );
+        quarters.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.BottomLeft,
+                settings: window._settings,
+            })
+        );
+        quarters.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.BottomRight,
+                settings: window._settings,
+            })
+        );
+        page.add(quarters);
+
+        const thirds = new Adw.PreferencesGroup({
+            title: _('Thirds'),
+        });
+        thirds.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.FirstThird,
+                settings: window._settings,
+            })
+        );
+        thirds.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.CenterThird,
+                settings: window._settings,
+            })
+        );
+        thirds.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.LastThird,
+                settings: window._settings,
+            })
+        );
+        thirds.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.FirstTwoThirds,
+                settings: window._settings,
+            })
+        );
+        thirds.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.LastTwoThirds,
+                settings: window._settings,
+            })
+        );
+        page.add(thirds);
+
+        const other = new Adw.PreferencesGroup({
+            title: _('Other'),
+        });
+        other.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.Maximize,
+                settings: window._settings,
+            })
+        );
+        other.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.Center,
+                settings: window._settings,
+            })
+        );
+        other.add(
+            new ShortcutRow({
+                shortcut: Shortcuts.Restore,
+                settings: window._settings,
+            })
+        );
+        page.add(other);
     }
 }
