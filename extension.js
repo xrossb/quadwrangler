@@ -45,20 +45,32 @@ export default class QuadwranglerExtension extends Extension {
                 return;
             }
 
-            const moving =
-                Meta.GrabOp.MOVING |
-                Meta.GrabOp.MOVING_UNCONSTRAINED |
-                Meta.GrabOp.KEYBOARD_MOVING;
-            if (op & moving) {
-                const pos = w.get_frame_rect();
-                w.move_resize_frame(
-                    false,
-                    pos.x,
-                    pos.y,
-                    w._quadwrangler.width,
-                    w._quadwrangler.height
-                );
+            // The moving flag (MOVING) seems to always be set, even when only
+            // resizing. So instead, I'm looking for whether any resize flags
+            // are set.
+            let resizing =
+                Meta.GrabOp.RESIZING_N |
+                Meta.GrabOp.RESIZING_E |
+                Meta.GrabOp.RESIZING_S |
+                Meta.GrabOp.RESIZING_W |
+                Meta.GrabOp.KEYBOARD_RESIZING_N |
+                Meta.GrabOp.KEYBOARD_RESIZING_E |
+                Meta.GrabOp.KEYBOARD_RESIZING_S |
+                Meta.GrabOp.KEYBOARD_RESIZING_W;
+            resizing ^= Meta.GrabOp.WINDOW_BASE;
+            if (op & resizing) {
+                // Only restore the original window dimensions on move.
+                return;
             }
+
+            const pos = w.get_frame_rect();
+            w.move_resize_frame(
+                false,
+                pos.x,
+                pos.y,
+                w._quadwrangler.width,
+                w._quadwrangler.height
+            );
 
             w._quadwrangler = undefined;
         });
