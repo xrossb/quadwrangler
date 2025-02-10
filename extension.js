@@ -33,7 +33,8 @@ export default class QuadwranglerExtension extends Extension {
         const mode = Shell.ActionMode.NORMAL;
         Main.wm.addKeybinding(shortcut, this._settings, flags, mode, (d, w) => {
             if (w && w.resizeable) {
-                Resizers[shortcut](d, w);
+                const p = this._settings.get_int('padding');
+                Resizers[shortcut](d, w, p);
             }
         });
         this._scope.defer(() => Main.wm.removeKeybinding(shortcut));
