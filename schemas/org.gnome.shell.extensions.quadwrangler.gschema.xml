@@ -7,7 +7,7 @@
             <description>Show a status icon in the system tray</description>
         </key>
         <key name="padding" type="i">
-            <default>8</default>
+            <default>0</default>
             <summary>Padding</summary>
             <description>Padding between snapped windows</description>
         </key>
