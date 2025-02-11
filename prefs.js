@@ -14,11 +14,11 @@ export default class QuadwranglerPreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
         window._settings = this.getSettings();
 
-        this._addGeneralPage(window);
-        this._addShortcutsPage(window);
+        this.#addGeneralPage(window);
+        this.#addShortcutsPage(window);
     }
 
-    _addGeneralPage(window) {
+    #addGeneralPage(window) {
         const page = new Adw.PreferencesPage({
             title: _('General'),
             iconName: 'preferences-other-symbolic',
@@ -61,7 +61,7 @@ export default class QuadwranglerPreferences extends ExtensionPreferences {
         );
     }
 
-    _addShortcutsPage(window) {
+    #addShortcutsPage(window) {
         const page = new Adw.PreferencesPage({
             title: _('Shortcuts'),
             iconName: 'input-keyboard-symbolic',

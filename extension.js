@@ -1,3 +1,4 @@
+import Gio from 'gi://Gio';
 import Meta from 'gi://Meta';
 import Shell from 'gi://Shell';
 
@@ -8,39 +9,51 @@ import Scope from './lib/scope.js';
 import {Shortcuts, Resizers} from './lib/shortcuts.js';
 
 export default class QuadwranglerExtension extends Extension {
-    enable() {
-        this._scope = new Scope();
+    /** @type {Scope} */
+    #scope;
+    /** @type {Gio.Settings} */
+    #settings;
 
-        this._settings = this.getSettings();
-        this._scope.defer(() => (this._settings = undefined));
+    enable() {
+        this.#scope = new Scope();
+
+        this.#settings = this.getSettings();
+        this.#scope.defer(() => (this.#settings = undefined));
 
         for (const shortcut of Object.values(Shortcuts)) {
-            this._registerShortcut(shortcut);
+            this.#registerShortcut(shortcut);
         }
 
-        this._registerOnGrab();
+        this.#registerOnGrab();
     }
 
     disable() {
-        this._scope.finalize();
-        this._scope = undefined;
+        this.#scope.finalize();
+        this.#scope = undefined;
     }
 
-    _registerShortcut(shortcut) {
+    /**
+     * Sets up the given keyboard shortcut with the window manager.
+     * @param {string} shortcut Name of the shortcut to register.
+     */
+    #registerShortcut(shortcut) {
         const flags =
             Meta.KeyBindingFlags.IGNORE_AUTOREPEAT |
             Meta.KeyBindingFlags.PER_WINDOW;
         const mode = Shell.ActionMode.NORMAL;
-        Main.wm.addKeybinding(shortcut, this._settings, flags, mode, (d, w) => {
+        Main.wm.addKeybinding(shortcut, this.#settings, flags, mode, (d, w) => {
             if (w && w.resizeable) {
-                const p = this._settings.get_int('padding');
+                const p = this.#settings.get_int('padding');
                 Resizers[shortcut](d, w, p);
             }
         });
-        this._scope.defer(() => Main.wm.removeKeybinding(shortcut));
+        this.#scope.defer(() => Main.wm.removeKeybinding(shortcut));
     }
 
-    _registerOnGrab() {
+    /**
+     * Sets up the on-grab handler, triggered when windows are "grabbed" by the cursor.
+     */
+    #registerOnGrab() {
         const handle = global.display.connect('grab-op-begin', (d, w, op) => {
             if (!w._quadwrangler) {
                 return;
@@ -75,6 +88,6 @@ export default class QuadwranglerExtension extends Extension {
 
             w._quadwrangler = undefined;
         });
-        this._scope.defer(() => global.display.disconnect(handle));
+        this.#scope.defer(() => global.display.disconnect(handle));
     }
 }
