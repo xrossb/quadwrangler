@@ -1,16 +1,17 @@
 {
     "compilerOptions": {
+        "allowJs": true,
         "lib": ["ESNext"],
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "noEmit": true,
         "types": [
             "@girs/gjs",
             "@girs/gjs/dom",
             "@girs/gnome-shell/ambient",
-            "@girs/gnome-shell/extensions/global",
+            "@girs/gnome-shell/extensions/global"
         ],
-        "target": "ESNext",
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
-        "noEmit": true
+        "target": "ESNext"
     },
     "files": ["extension.js", "prefs.js"]
 }
