@@ -1,8 +1,6 @@
-// SPDX-License-Identifier: CC0-1.0
-// SPDX-FileCopyrightText: No rights reserved
-
 import js from '@eslint/js';
 import jsdoc from 'eslint-plugin-jsdoc';
+import ts from 'typescript-eslint';
 
 const gjsRecommended = {
     languageOptions: {
@@ -147,8 +145,10 @@ const gjsRecommended = {
     },
 };
 
-export default [
+export default ts.config(
     js.configs.recommended,
     gjsRecommended,
     jsdoc.configs['flat/recommended'],
-];
+    ts.configs.strict,
+    ts.configs.stylistic
+);
