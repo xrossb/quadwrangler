@@ -14,88 +14,88 @@
 
         <!-- Halves -->
         <key name="qw-left-half" type="as">
-            <default><![CDATA[['<Ctrl><Super>Left']]]></default>
+            <default><![CDATA[['<Control><Super>Left']]]></default>
             <summary>Left half</summary>
             <description>Snap to the left half of the screen.</description>
         </key>
         <key name="qw-right-half" type="as">
-            <default><![CDATA[['<Ctrl><Super>Right']]]></default>
+            <default><![CDATA[['<Control><Super>Right']]]></default>
             <summary>Right half</summary>
             <description>Snap to the right half of the screen.</description>
         </key>
         <key name="qw-top-half" type="as">
-            <default><![CDATA[['<Ctrl><Super>Up']]]></default>
+            <default><![CDATA[['<Control><Super>Up']]]></default>
             <summary>Top half</summary>
             <description>Snap to the top half of the screen.</description>
         </key>
         <key name="qw-bottom-half" type="as">
-            <default><![CDATA[['<Ctrl><Super>Down']]]></default>
+            <default><![CDATA[['<Control><Super>Down']]]></default>
             <summary>Bottom half</summary>
             <description>Snap to the bottom half of the screen.</description>
         </key>
 
         <!-- Quarters -->
         <key name="qw-top-left" type="as">
-            <default><![CDATA[['<Ctrl><Super>U']]]></default>
+            <default><![CDATA[['<Control><Super>U']]]></default>
             <summary>Top left</summary>
             <description>Snap to the top left corner of the screen.</description>
         </key>
         <key name="qw-top-right" type="as">
-            <default><![CDATA[['<Ctrl><Super>I']]]></default>
+            <default><![CDATA[['<Control><Super>I']]]></default>
             <summary>Top right</summary>
             <description>Snap to the top right corner of the screen.</description>
         </key>
         <key name="qw-bottom-left" type="as">
-            <default><![CDATA[['<Ctrl><Super>J']]]></default>
+            <default><![CDATA[['<Control><Super>J']]]></default>
             <summary>Bottom left</summary>
             <description>Snap to the bottom left corner of the screen.</description>
         </key>
         <key name="qw-bottom-right" type="as">
-            <default><![CDATA[['<Ctrl><Super>K']]]></default>
+            <default><![CDATA[['<Control><Super>K']]]></default>
             <summary>Bottom right</summary>
             <description>Snap to the bottom right corner of the screen.</description>
         </key>
 
         <!-- Thirds -->
         <key name="qw-first-third" type="as">
-            <default><![CDATA[['<Ctrl><Super>D']]]></default>
+            <default><![CDATA[['<Control><Super>D']]]></default>
             <summary>First third</summary>
             <description>Snap to the left third of the screen.</description>
         </key>
         <key name="qw-center-third" type="as">
-            <default><![CDATA[['<Ctrl><Super>F']]]></default>
+            <default><![CDATA[['<Control><Super>F']]]></default>
             <summary>Center third</summary>
             <description>Snap to the center third of the screen.</description>
         </key>
         <key name="qw-last-third" type="as">
-            <default><![CDATA[['<Ctrl><Super>G']]]></default>
+            <default><![CDATA[['<Control><Super>G']]]></default>
             <summary>Last third</summary>
             <description>Snap to the right third of the screen.</description>
         </key>
         <key name="qw-first-two-thirds" type="as">
-            <default><![CDATA[['<Ctrl><Super>E']]]></default>
+            <default><![CDATA[['<Control><Super>E']]]></default>
             <summary>First two thirds</summary>
             <description>Fill the left two thirds of the screen.</description>
         </key>
         <key name="qw-last-two-thirds" type="as">
-            <default><![CDATA[['<Ctrl><Super>T']]]></default>
+            <default><![CDATA[['<Control><Super>T']]]></default>
             <summary>Right two thirds</summary>
             <description>Fill the right two thirds of the screen.</description>
         </key>
 
         <!-- Other -->
         <key name="qw-maximize" type="as">
-            <default><![CDATA[['<Ctrl><Super>Return']]]></default>
+            <default><![CDATA[['<Control><Super>Return']]]></default>
             <summary>Maximize</summary>
             <description>Fill the screen.</description>
         </key>
         <key name="qw-center" type="as">
-            <default><![CDATA[['<Ctrl><Super>C']]]></default>
+            <default><![CDATA[['<Control><Super>C']]]></default>
             <summary>Center</summary>
             <description>Snap to the center of the screen.</description>
         </key>
         <key name="qw-restore" type="as">
-            <default><![CDATA[['<Ctrl><Super>BackSpace']]]></default>
+            <default><![CDATA[['<Control><Super>BackSpace']]]></default>
             <summary>Restore</summary>
             <description>Restore the original size and position of the window.</description>
         </key>
